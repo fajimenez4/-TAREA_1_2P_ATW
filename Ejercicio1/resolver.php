@@ -1,18 +1,17 @@
 <?php
 require_once __DIR__ . '/classes/SistemaLineal.php';
 
-echo "Ingrese coeficientes para la ecuación 1 (a1 b1 c1):\n";
-[$a1, $b1, $c1] = array_map('floatval', explode(' ', trim(fgets(STDIN))));
-
-echo "Ingrese coeficientes para la ecuación 2 (a2 b2 c2):\n";
-[$a2, $b2, $c2] = array_map('floatval', explode(' ', trim(fgets(STDIN))));
-
+// Ejemplo: 2x + 3y = 5 y 4x - y = 1
 $ecuaciones = [
-    'eq1' => ['x' => $a1, 'y' => $b1, 'c' => $c1],
-    'eq2' => ['x' => $a2, 'y' => $b2, 'c' => $c2]
+    'eq1' => ['x' => 2, 'y' => 3, 'c' => 5],
+    'eq2' => ['x' => 4, 'y' => -1, 'c' => 1]
 ];
 
 $sistema = new SistemaLineal();
+
+echo "Sistema de Ecuaciones:\n";
+echo "Ecuación 1: " . $ecuaciones['eq1']['x'] .'x + ' . $ecuaciones['eq1']['y'] .'y = ' . $ecuaciones['eq1']['c'] . "\n";
+echo "Ecuación 2: " . $ecuaciones['eq2']['x'] .'x + ' . $ecuaciones['eq2']['y'] .'y = ' . $ecuaciones['eq2']['c'] . "\n";
 
 if (!$sistema->validarConsistencia($ecuaciones)) {
     echo "El sistema no tiene solución única.\n";

@@ -5,4 +5,5 @@ abstract class SistemaEcuaciones implements SistemaEcuacionesInterface
 {
     abstract public function calcularResultado(array $ecuaciones): array;
     abstract public function validarConsistencia(array $ecuaciones): bool;
+    
 }

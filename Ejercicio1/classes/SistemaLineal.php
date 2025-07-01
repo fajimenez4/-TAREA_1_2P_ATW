@@ -6,11 +6,10 @@ class SistemaLineal extends SistemaEcuaciones
     public function calcularResultado(array $ecuaciones): array
     {
         // Ecuación 1: a1*x + b1*y = c1
-        // Ecuación 2: a2*x + b2*y = c2
         $a1 = $ecuaciones['eq1']['x'];
         $b1 = $ecuaciones['eq1']['y'];
         $c1 = $ecuaciones['eq1']['c'];
-
+        // Ecuación 2: a2*x + b2*y = c2
         $a2 = $ecuaciones['eq2']['x'];
         $b2 = $ecuaciones['eq2']['y'];
         $c2 = $ecuaciones['eq2']['c'];
@@ -54,7 +53,6 @@ class SistemaLineal extends SistemaEcuaciones
         $b1 = $ecuaciones['eq1']['y'];
         $a2 = $ecuaciones['eq2']['x'];
         $b2 = $ecuaciones['eq2']['y'];
-        // El sistema es consistente si los coeficientes no son proporcionales
         return ($a1 * $b2 - $a2 * $b1) !== 0;
     }
 }
