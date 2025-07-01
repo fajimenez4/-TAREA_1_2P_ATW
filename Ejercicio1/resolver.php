@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/clases/SistemaLineal.php';
+require_once __DIR__ . '/classes/SistemaLineal.php';
 
 echo "Ingrese coeficientes para la ecuación 1 (a1 b1 c1):\n";
 [$a1, $b1, $c1] = array_map('floatval', explode(' ', trim(fgets(STDIN))));
